@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #000;
+
+
+    }
+    .caixa-gradiente{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 300px;
+        height: 80px;
+        color: #000;
+        background: #fff;
+        border-radius: 5px;        
+        font:bold 1.8em 'Century Gothic';
+    }
+
+    .caixa-gradiente:hover{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 300px;
+        height: 80px;
+        color: #fff;
+        background: #000;
+        border-radius: 5px;        
+        font:bold 1.8em 'Century Gothic';
+    }
+
+    .caixa-gradiente::before, .caixa-gradiente::after{
+        content: " ";
+        position: absolute;
+        z-index: -1;
+        width: calc(100% + 10px);
+        height: calc(100% + 10px);
+        /*
+        background: linear-gradient(90deg, #9d75e6,  #758fe6, #00ffea, #e5ff00, #ff0077, #ff0000,#ffff00, #00ff00, #0099ff, #001aff, #758fe6);
+        */
+        background: linear-gradient(90deg, #e9ec0b, #ee530c, #e9ec0b, #ee530c,#e9ec0b, #ee530c, #e9ec0b,  #e9ec0b, #ee530c, #e9ec0b,#ee530c,#e9ec0b,#ee530c,#e9ec0b,#ee530c,#e9ec0b);
+        background-size: 300%;
+        border-radius: 8px;
+        animation: animarBorda 12s linear infinite;
+        
+        
+    }
+    @keyframes animarBorda{
+        0%{
+            background-position: 0;
+        }
+        100%{
+            background-position: 300%;
+        }
+    }
+
+
+    .caixa-gradiente::after{
+        filter: blur(50px);
+    }
